@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome Invertido</title>
+    
+    <style>
+        body{
+            background-color: rgb(182, 198, 255);
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="inverter">
+        <h1>Descubra como é seu nome ao contrário!!</h1>
+        <input type="text" :placeholder="place" v-model:value="message">
+        <h2><p>Seu nome: "{{ message }}"</p></h2>
+        <h2><p>Seu nome ao contrário: "{{ nomeContrario }}"</p></h2>
+      </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    var vm = new Vue({
+    el: '#inverter',
+    data: {
+    place:'Informe seu nome',
+    message: ''
+  },
+  computed: {
+    
+    nomeContrario: function () {
+      return this.message.split('').reverse().join('')
+    }
+  }
+})
+    </script>
+</body>
+</html>
